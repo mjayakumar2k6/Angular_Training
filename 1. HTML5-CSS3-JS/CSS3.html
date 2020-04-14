@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 Rocks!!!</title>
+    <style>
+        a[href^='https://www.youtube']{
+            color: green;
+        }
+
+        a[href$='3ME2eftygJo']{
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        a[href*='watch?']{
+            border: 3px solid red;
+        }
+        .first-child :first-child {
+            color: blue;
+        }
+
+        .first-child :last-child {
+            color: yellowgreen;
+        }
+        ul li:not(:first-child) {
+            font-weight: bold;
+        }
+        .rgba {
+            height: 200px;
+            width: 200px;
+            background-color: rgb(19, 19, 214, 0.5);
+        }
+        .shadow {
+            box-shadow: 5px 5px 5px 0px rgba(72,72,72,0.7);
+        }
+        .text-shadow {
+            text-shadow: 0px -15px 2px rgba(150, 150, 150, 1);
+        }
+        .muti-img {
+            width: 100%;
+            height: 500px;
+            background-image: url("../resources/green.png"), url("../resources/red.png");
+            background-position: right bottom, left top;
+            background-repeat: no-repeat, repeat;
+        }
+    </style>
+</head>
+<body>
+    <h1>1. CSS3 Selectors</h1>
+    <div>
+        <h2>E[attr^=val]</h2>
+        <div>
+            <a href="https://www.youtube.com/">Video 1</a>
+        </div>
+        
+        <h2>E[attr$=val]</h2>
+        <div>
+            <a href="https://www.youtube.com/watch?v=3ME2eftygJo">Video 2</a>
+        </div>
+
+        <h2>E[attr*=val]</h2>
+        <div>
+            <a href="https://www.youtube.com/watch?v=mntcYOaeXYM">Video 3</a>
+        </div>
+
+        <h2>Pseudo-classes</h2>
+        <div>
+            <h3>:first-child, :last-child & :not</h3>
+            <ul class="first-child">
+                <li>First Item</li>
+                <li>Second Item</li>
+                <li>Third Item</li>
+                <li>Fourth Item</li>
+            </ul>
+        </div>
+
+        <h2>RGBA</h2>
+        <div class="rgba">
+            RGBA
+        </div>
+
+        <h2>Drop Shadows</h2>
+        <div class="rgba shadow">
+            RGBA
+        </div>
+
+        <h2>Text Shadow</h2>
+        <div class="text-shadow">Text Shadow Is Cool</div>
+
+        <h2>Multiple Background Images</h2>
+        <div class="muti-img">
+
+        </div>
+    </div>
+</body>
+</html>
