@@ -1,0 +1,18 @@
+.check {
+    color: green;
+    font-size: 18px;
+    padding: 10px;
+    margin:10px
+}
+.black {
+    color: #000000;
+}
+.red {
+    color: red;
+}
+.green {
+    color: green;
+}
+.bold {
+    font-weight: bold;
+}
