@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var globalVariable = "global";
+        function es6() {
+            var name = "HI";
+            var name = "Hello";
+            console.log(name);
+            let fruit = "Apple";
+                fruit = "Orange";
+                if(true) {
+                    let fruit = "Banana";
+                    console.log(fruit, "Inside if");
+                }
+                console.log(fruit);
+
+                /*Const*/
+                const PI = 3.14;
+                console.log(PI);
+
+                const ARR = [1,2,3];
+                console.log(ARR);
+                ARR.push(5);
+                console.log(ARR);
+                
+
+        }
+        es6();
+
+        function defaultParams(a, b=100) {
+            console.log(a,b);
+        }
+        defaultParams(1);
+        defaultParams(1,2);
+        defaultParams(3,4);
+
+        function restParameter(a,c, ...b) {
+            console.log(a, b, c);
+        }
+        restParameter(1,2,4,5,6);
+
+        function spreadOperator() {
+            const PERSON = {name: "Jk", course: "Angular"};
+            const TITLE = {title: "Trainer"};
+
+
+            let copyPerson = {...PERSON, ...TITLE};
+            copyPerson.name = "Mr.Jk";
+
+            console.log("copyPerson", copyPerson);
+
+            console.log("Person", PERSON);
+
+            let arr = [1,2,3];
+            let newarr = [...arr];
+
+            newarr.pop();
+
+            console.log("arr", arr);
+            console.log("newarr", newarr);
+        }
+
+        spreadOperator();
+
+        function arrowFunction() {
+            let car = {
+                name: "Car",
+                model: "Model",
+                display: function() {
+                    console.log("name", this.name);
+                    var self = this;
+                    setTimeout(function(){
+                        console.log("name timeout", self.name);
+                    }, 1);
+
+                    setTimeout(()=>{
+                        console.log("name inside arrow function", this.name);
+                    }, 1);
+                }
+            }
+            console.log(car.display());
+        }
+
+        arrowFunction();
+
+        function temoplate() {
+            let a = 5;
+            let b = 5;
+            let result = "Sum of a and b = " + (a+b) + ";";
+            console.log(result)
+
+            let temoplateLiterals = `Sum of a and b = ${a+b};`
+            console.log(temoplateLiterals);
+            
+        }
+        temoplate();
+
+        function objectLiteral() {
+            let name = "Jk";
+            let training = "Angular";
+            let obj = {
+                name: name,
+                training: training
+            }
+
+            console.log(obj);
+
+            let obj1 = {
+                name, training
+            }
+            console.log(obj1);
+
+        }
+        objectLiteral();
+
+        function destructuring() {
+            let arr = [1,2,3,4,5];
+
+            let a = arr[0];
+            let b = arr[1];
+            let h = arr[2];
+
+            arr.forEach(function(ele){
+                console.log("arr", ele);
+            });
+
+            console.log(`a=${a},b=${b}`);
+
+            let [c,d,e,f,g] = arr;
+            console.log(`c=${c},d=${d},e=${e}, f=${f}, g=${g}`);
+
+            let obj = {training: "angular", duration: "1"}
+
+            let {training:tt, duration:dd} = obj;
+            console.log(tt,dd);
+        }
+
+        destructuring();
+    </script>
+</body>
+</html>

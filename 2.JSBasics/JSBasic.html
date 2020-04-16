@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=in, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+<body onload="onLoad()">
+    <div>DOM</div>
+    <img src="./resources/green.png" alt="">
+
+    <button id="login" onclick="doLogin()">Login</button>
+    <br>
+    <a href="./HTML5.html" onclick="linkClick(event)">Go to html 5</a>
+
+    <br><br><br>
+    <label for="name">A</label>
+    <input type="text" name="name" id="name" 
+           onfocus="onFocus()" 
+           onblur="onBlur(this)"
+           onchange="onChange(this)">
+    <br>
+    <label for="b">B</label>
+    <input type="text" name="name" id="b" 
+           onfocus="onFocus()" 
+           onblur="onBlur(this)"
+           onchange="onChange()"
+           onkeydown=""
+           onkeyup="">               
+
+    <script>
+        var isLogin = false;
+        function onLoad() {
+            console.log("Page Loaded");
+        }
+
+        function linkClick(event) {
+            if(!isLogin) {
+                event.preventDefault();
+                console.log("Please Login");
+            }            
+            
+        }
+
+        function doLogin() {
+            isLogin = !isLogin;
+            if(isLogin) {
+                document.getElementById("login").innerHTML = "Logout";
+            } else {
+                document.getElementById("login").innerHTML = "Login";
+            }
+        }
+
+        function onFocus() {
+            console.log("On Focus");
+        }
+
+        function onBlur(element) {
+            if(element.value=="") {
+                console.log("Please enter value");
+            } else {
+                console.log("Value", element.value);
+            }
+        }
+
+        function onChange() {
+            if(document.getElementById("name").value!="" && document.getElementById("b").value!="") {
+                console.log(parseInt(document.getElementById("name").value) + parseFloat(document.getElementById("b").value))
+            }
+        }
+    </script>
+</body>
+</html>
