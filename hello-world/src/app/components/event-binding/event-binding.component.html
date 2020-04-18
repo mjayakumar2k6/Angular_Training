@@ -1,0 +1,15 @@
+<hr>
+<h1>{{title}}</h1>
+
+<h3>{{welcome}}</h3>
+<button (click)="greet()">Greet</button>
+
+<button (click)="welcome='welcome from temlate'">Greet - Assign</button>
+<h3>{{event}}</h3>
+<button (click)="captureEvent($event)">Event Capture</button>
+<br>
+<br>
+<input type="text" name="name" id="name" [disabled]="enableDisableInput">
+<button (click)="enableDisable()">Enable/Disable Input</button>
+
+<hr>

@@ -1,0 +1,20 @@
+<hr>
+<h1>{{title}}</h1>
+
+<h3 class="success">Welcome Jk</h3>
+
+<h3 class="success" [class]="'special'" >Welcome Jk</h3>
+
+<h3 class="error" [class]="'special'" >Welcome Jk</h3>
+
+<h3 class="success" [class.special]="applySpecial" >Welcome Jk</h3>
+
+<h3 [ngClass]="applyStyle" >Welcome Jk</h3>
+
+<h3 [ngClass]="{
+    'success': !this.hasError,
+    'error': this.hasError,
+    'special': this.applySpecial
+  }" >Welcome Jk - Inline</h3>
+
+<hr>
