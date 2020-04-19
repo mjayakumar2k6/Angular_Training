@@ -1,0 +1,48 @@
+<hr>
+<h1>{{title}}</h1>
+
+<h3 *ngIf="displayTitle">Welcome to angular Training</h3>
+
+<h3 *ngIf="isAdmin; else userBlock;">Admin</h3>
+
+<ng-template #userBlock>
+    <h3>Normal User</h3>
+</ng-template>
+
+<div *ngIf="isAdmin; then ifBlock;else elseBlock;"></div>
+
+<ng-template #ifBlock>
+    <h3>I am a admin user</h3>
+</ng-template>
+
+<ng-template #elseBlock>
+    <h3>I am a normal user</h3>
+</ng-template>
+
+<button (click)="toggleUser()">Toggle User</button>
+
+<h3>*ngStich</h3>
+<button (click)="assignColor('red')">Red</button>
+<button (click)="color='green'">Green</button>
+<button (click)="color=''">No Color</button>
+
+<span [ngSwitch]="color">
+<p *ngSwitchCase="'red'">
+    you have choosen red color
+</p>
+<p *ngSwitchCase="'green'">
+    you have choosen green
+</p>
+<p *ngSwitchDefault>
+    you have not choosen one.
+</p>
+</span>
+
+
+<h2>*ngFor</h2>
+
+<ul>
+    <li *ngFor="let c of colors">{{c}}</li>
+</ul>
+
+<hr>

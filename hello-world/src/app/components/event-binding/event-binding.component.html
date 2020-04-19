@@ -12,4 +12,22 @@
 <input type="text" name="name" id="name" [disabled]="enableDisableInput">
 <button (click)="enableDisable()">Enable/Disable Input</button>
 
+<br>
+<br>
+<button (click)="assignError(false)">Sucess</button>
+<button (click)="assignError(true)">Error</button>
+<button (click)="toggleSpecial()">Toggle Spcial</button>
+
+<br>
+<h3 [ngClass]="{'success': !hasError, 'error': hasError,  'special': isSpecital}">Welcome Jk!!!</h3>
+
+<table>
+    <tr (click)="logClick()">
+        <td>Name</td>
+        <td (click)="logTd($event)">Email</td>
+    </tr>
+</table>
+
+
+
 <hr>

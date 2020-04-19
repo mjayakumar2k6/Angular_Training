@@ -10,6 +10,8 @@ export class EventBindingComponent implements OnInit {
   welcome = "";
   event = "";
   enableDisableInput = false;
+  hasError = true;
+  isSpecital = false;
   constructor() { }
 
   ngOnInit(): void {
@@ -27,6 +29,23 @@ export class EventBindingComponent implements OnInit {
 
   enableDisable() {
     this.enableDisableInput = !this.enableDisableInput;
+  }
+
+  assignError(iserror: boolean) {
+    this.hasError = iserror;
+  }
+
+  toggleSpecial() {
+    this.isSpecital = !this.isSpecital;
+  }
+
+  logClick() {
+    console.log("TR clicked");
+  }
+
+  logTd(event: Event) {
+    event.stopPropagation();
+    console.log("TD clicked");
   }
 
 }

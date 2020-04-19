@@ -1,0 +1,31 @@
+<hr>
+<h1>{{title}}</h1>
+
+<input type="text" [(ngModel)]="name"> {{name}}
+<br>
+
+<label for="username">User Name</label>
+<input type="text" name="username" [(ngModel)]="username">
+
+<label for="pwd">Password</label>
+<input type="password" name="password" [(ngModel)]="password">
+<br>
+<button (click)="doLogin()">Login</button>
+
+<h2>User Form</h2>
+
+<label for="name">Name</label>
+<input type="text" name="name" [(ngModel)]="user.name">
+
+<label for="email">Email</label>
+<input type="email" name="email" [(ngModel)]="user.email">
+<br>
+<input type="text" name="somename" value="{{user.name}}" #iinput>
+<button (click)="updateMydata(iinput.value)">Update Manually</button>
+<br>
+<button (click)="doUpdate()">Update</button>
+
+<br>
+
+
+<hr>
