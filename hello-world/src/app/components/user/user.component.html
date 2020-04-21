@@ -1,0 +1,9 @@
+<hr>
+<h1>User Component</h1>
+
+<ul>
+    <li *ngFor="let user of users | order">{{user.name | titlecase}}</li>
+</ul>
+
+<button (click)="addUser()">Add</button>
+<hr>

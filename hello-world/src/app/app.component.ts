@@ -22,6 +22,6 @@ export class AppComponent {
 
 
   callChildFn() {
-    this.childComponent.displayColor();
+    this.childComponent.displayColor("green");
   }
 }

@@ -1,0 +1,40 @@
+<hr>
+<h1>{{title}}</h1>
+
+<h3>{{name | lowercase}}</h3>
+<h3>{{name | uppercase}}</h3>
+<h3>{{name | titlecase}}</h3>
+<h3>{{name | slice:3}}</h3>
+<h3>{{name | slice:3:5}}</h3>
+
+<h3>{{num | number:'1.1-1'}}</h3>
+<h3>{{num | number:'1.1-2'}}</h3>
+<h3>{{num | number:'2.0-0'}}</h3>
+
+<h3>{{date}}/</h3>
+<h3>{{date | date: 'short'}}</h3>
+<h3>{{date | date: 'shortDate'}}</h3>
+<h3>{{date | date: 'shortTime'}}</h3>
+
+<h3>{{ num | currency }}</h3>
+<h3>{{ num | currency:'GBP' }}</h3>
+<h3>{{ num | currency:'INR' }}</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users | order">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+        </tr>
+    </tbody>
+</table>
+
+<hr>

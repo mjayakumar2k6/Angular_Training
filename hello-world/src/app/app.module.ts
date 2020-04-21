@@ -15,6 +15,10 @@ import { TemplateRefrenceVariableComponent } from './components/template-refrenc
 import { TwowayBindingComponent } from './components/twoway-binding/twoway-binding.component';
 import { NgIfngSwitchComponent } from './components/ng-ifng-switch/ng-ifng-switch.component';
 import { ChildComponent } from './components/child/child.component';
+import { PipeComponent } from './components/pipe/pipe.component';
+import { OrderPipe } from './pipes/order.pipe';
+import { UserComponent } from './components/user/user.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,11 @@ import { ChildComponent } from './components/child/child.component';
     TemplateRefrenceVariableComponent,
     TwowayBindingComponent,
     NgIfngSwitchComponent,
-    ChildComponent
+    ChildComponent,
+    PipeComponent,
+    OrderPipe,
+    UserComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

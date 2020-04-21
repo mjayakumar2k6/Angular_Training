@@ -19,8 +19,16 @@
 <!-- <app-twoway-binding></app-twoway-binding> -->
 
 <!-- <app-ng-ifng-switch></app-ng-ifng-switch> -->
-{{fromChild.name }}
+
+<!--Parent child component interaction starts here-->
+<!-- {{fromChild.name }}
 
 <button (click)="callChildFn()">Call Child Function</button>
-<app-child [parentData]="name" (childEvent)="displayDataFromChild($event)"></app-child>
+<app-child [parentData]="name" (childEvent)="displayDataFromChild($event)"></app-child> -->
+<!--Parent child component interaction ends here-->
 
+<!-- <app-pipe></app-pipe> -->
+
+<app-user></app-user>
+
+<app-user-detail></app-user-detail>

@@ -22,8 +22,8 @@ export class ChildComponent implements OnInit {
     this.childEvent.emit({name: "jk", id: 1});
   }
 
-  displayColor() {
-    this.color = "red";
+  displayColor(color="") {
+    this.color = color;
   }
 
 }
