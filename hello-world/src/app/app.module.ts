@@ -14,6 +14,7 @@ import { EventBindingComponent } from './components/event-binding/event-binding.
 import { TemplateRefrenceVariableComponent } from './components/template-refrence-variable/template-refrence-variable.component';
 import { TwowayBindingComponent } from './components/twoway-binding/twoway-binding.component';
 import { NgIfngSwitchComponent } from './components/ng-ifng-switch/ng-ifng-switch.component';
+import { ChildComponent } from './components/child/child.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { NgIfngSwitchComponent } from './components/ng-ifng-switch/ng-ifng-switc
     EventBindingComponent,
     TemplateRefrenceVariableComponent,
     TwowayBindingComponent,
-    NgIfngSwitchComponent
+    NgIfngSwitchComponent,
+    ChildComponent
   ],
   imports: [
     BrowserModule,

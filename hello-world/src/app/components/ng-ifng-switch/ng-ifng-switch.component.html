@@ -46,3 +46,28 @@
 </ul>
 
 <hr>
+
+<h3>Users</h3>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of displayUser;index as i;first as f;last as lt" [ngClass]="{'highlight': f || lt}">
+            <td>{{user.id}} == {{i+1}} </td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{f}}</td>
+        </tr>
+    </tbody>
+</table>
+//odd as o
+//event as e
+
+<button (click)="pageUser()">Paginate</button>
+<br><br><br>

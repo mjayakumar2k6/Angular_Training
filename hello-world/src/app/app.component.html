@@ -17,4 +17,10 @@
 <!-- <app-template-refrence-variable></app-template-refrence-variable> -->
 
 <!-- <app-twoway-binding></app-twoway-binding> -->
-<app-ng-ifng-switch></app-ng-ifng-switch>
+
+<!-- <app-ng-ifng-switch></app-ng-ifng-switch> -->
+{{fromChild.name }}
+
+<button (click)="callChildFn()">Call Child Function</button>
+<app-child [parentData]="name" (childEvent)="displayDataFromChild($event)"></app-child>
+
