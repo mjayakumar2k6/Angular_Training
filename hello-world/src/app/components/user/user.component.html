@@ -6,4 +6,22 @@
 </ul>
 
 <button (click)="addUser()">Add</button>
+
+
+<h3>Employees</h3>
+
+<ul>
+    <li *ngFor="let emp of employees">{{emp.employee_name}}</li>
+</ul>
 <hr>
+
+<label for="name">Name</label>
+<input type="text" name="name" id="name" [(ngModel)]="name">
+<label for="salary">Salary</label>
+<input type="text" name="salary" id="salary" [(ngModel)]="salary">
+<label for="age">Age</label>
+<input type="text" name="age" id="age" [(ngModel)]="age">
+
+<button (click)="saveEmp()">Save Employees</button>
+
+<h3>{{errorMessage}}</h3>

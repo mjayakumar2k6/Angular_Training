@@ -11,7 +11,10 @@ export class UserDetailComponent implements OnInit {
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.users = this.userService.getUsers();
+    this.userService.getUsers()
+    .subscribe(d => {
+      this.users = d;
+    })
   }
 
 }

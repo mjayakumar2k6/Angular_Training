@@ -10,35 +10,44 @@ export class UserComponent implements OnInit {
 
   users = []
 
+  employees = []
+
+  name = "";
+  salary = "";
+  age = "";
+  errorMessage = "";
+
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.users = this.userService.getUsers();
+    this.userService.getUsers()
+    .subscribe(data => {
+      this.users = data;
+    });
+
+    this.displayUser();
   }
 
   addUser() {
     this.userService.addUser({name: "test", id: 2, email: "test@te.co"})
   }
 
-}
-
-class Engine {
-  constructor(params) {}
-}
-
-class Tires {
-  constructor(tparams) {}
-}
-
-class Car {
-  engine;
-  tires;
-  constructor(engine, tires) {
-    this.engine = engine;
-    this.tires = tires;
+  saveEmp() {
+    this.userService.addEmployees({name: this.name, salary: this.salary, age: this.age})
+    .subscribe(
+      (d:any) => { this.displayUser(); },
+      (error:any)=>{
+        this.errorMessage = error.message;
+        alert("Server error please contact administrator");
+      }
+    )
   }
-}
 
-let eClass = new Engine("12");
-let tires = new Tires(4);
-let newCar = new Car(eClass,tires)
+  displayUser() {
+    this.userService.getDummyEmp()
+    .subscribe((d:any)=>{
+      this.employees = d.data;
+    })    
+  }
+
+}

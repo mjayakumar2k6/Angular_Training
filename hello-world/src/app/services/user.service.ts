@@ -1,23 +1,44 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  users = [
-    {name: "jk", id: 1, email: "jk@jk.com"},
-    {name: "Vidyashree", id: 2, email: "abc@jk.com"},
-    {name: "Rincy", id: 3, email: "xyz@jk.com"},
-    {name: "Tejaswini", id: 4, email: "wery@jk.com"},
-    {name: "xyz", id: 5, email: "wery@jk.com"},
-  ] 
-  constructor() { }
+  users = [] 
+  private _url = './assets/data/users.json';
+  private _apiUrl = "http://dummy.restapiexample.com/api/v1/employees";
+  
+  constructor(private http: HttpClient) { }
 
-  getUsers() {
-    return this.users;
+  getUsers():Observable<any> {
+    return this.http.get(this._url);
   }
 
   addUser(user) {
     this.users.push(user);
   }
+
+  getDummyEmp() {
+    return this.http.get(this._apiUrl);
+  }
+
+  addEmployees(emp) {
+    return this.http.post("http://dummy.restapiexample.com/api/v1/create", emp)
+    .pipe(
+      catchError(this.errorHandler)
+    )
+  }
+
+  errorHandler(error: HttpErrorResponse) {
+    //return Observable.throw("");
+    console.log(error);
+    return throwError(error || "Server Error");
+  }
+
+  
 }
