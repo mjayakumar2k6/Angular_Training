@@ -1,0 +1,17 @@
+<h1>Department Details</h1>
+
+<h3>You have selected</h3>
+<h4>Id: {{deptId}}</h4>
+<h4>Name: {{deptName}}</h4>
+
+<button (click)="goPrev()">Prev</button> | <button (click)="gotNext()">Next</button>
+<br>
+
+<button (click)="gotBack()">Back</button>
+
+<br>
+
+<button (click)="goToContact()">Contact</button>
+<button (click)="goToInfo()">Info</button>
+
+<router-outlet></router-outlet>

@@ -1,1 +1,17 @@
-<p>departments works!</p>
+
+<ul>
+    <li *ngFor="let department of departments" (click)="navigateToDepartmentDetails(department)" 
+    [ngClass]="{'selected': (selectedDepartmentId == department.id)}">
+        <span>{{department.id}}</span>
+        {{department.name}}
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let department of departments" [ngClass]="{'selected': isSelected(department)}">
+        <a [routerLink]="[ department.id ]">
+            <span>{{department.id}}</span>
+            {{department.name}}
+        </a>
+    </li>
+</ul>

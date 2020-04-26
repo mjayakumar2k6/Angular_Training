@@ -20,6 +20,9 @@ import { UserComponent } from './components/user/user.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
+import { DepartmentDetailsComponent } from './components/department-details/department-details.component';
+import { DepartmentContactsComponent } from './components/department-contacts/department-contacts.component';
+import { DepartmentInfoComponent } from './components/department-info/department-info.component';
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import { HeaderComponent } from './components/header/header.component';
     UserComponent,
     UserDetailComponent,
     routingComponents,
-    HeaderComponent
+    HeaderComponent,
+    DepartmentDetailsComponent,
+    DepartmentContactsComponent,
+    DepartmentInfoComponent
   ],
   imports: [
     BrowserModule,
